@@ -7,6 +7,10 @@ export const ItemCount = ( { imagen, nombre, precio }) => {
     const [ contador, setContador] = useState(1)
 
     const agregar = () => {
+        if (contador > 4){
+            return
+        }
+
         setContador ( contador + 1); 
     }
 
