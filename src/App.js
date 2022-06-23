@@ -12,7 +12,7 @@ function App() {
   }
 
   const producto = {
-    imagen: torta ,
+    img: torta ,
     nombre: "Pastel",
     precio: "2500",
     cantidad: "5",
@@ -33,7 +33,7 @@ function App() {
 
       <ItemListContainer titulo="Bienvenidos a la experiencia más dulce de tu vida" content="No te arrepentiras de nuestros sabores, prueba y verás"/>
       <ItemListContainer titulo={usuario.nombre} content={usuario.cargo}/>
-      <ItemCount nombre={ producto.nombre } imagen={ producto.imagen } precio={ producto.precio }/>
+      <ItemCount nombre={ producto.nombre } img={ producto.img } precio={ producto.precio }/>
     </div>
   );
 }
