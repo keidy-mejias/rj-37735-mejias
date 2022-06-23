@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './ItemCount.scss'
 
 //Agregare imagenes, nombre y valor o precio a las cards
-export const ItemCount = ( { img, nombre, precio }) => {
+export const ItemCount = ( { imagen, nombre, precio }) => {
 
     const [ contador, setContador] = useState(1)
 
@@ -31,7 +31,7 @@ export const ItemCount = ( { img, nombre, precio }) => {
                 <div className='card'>
 
                     <h4 className="cardsTitle"> { nombre } </h4>
-                    <imagen className="img" src= { img } />
+                    <img alt="pastel" src= { imagen } />
                     <strong className="precioCard"> { precio } </strong>
 
                     <div className='buttons'>
