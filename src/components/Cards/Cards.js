@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import './Cards.scss'
 
 export const Cards = ( {items} ) => {
@@ -6,15 +7,20 @@ export const Cards = ( {items} ) => {
 
         <div className="cards">
 
-            <h2 className="titulo">{items.nombre}</h2>
-
             <img className="imgCards" alt="img Productos" src={items.img} />
 
-            <h6 className="descripcion">{items.descripcion}</h6>
-
-            <strong>{items.precio}</strong>
+            <p> { items.nombre } </p>
 
             <hr/>
+
+            <strong> $ { items.precio } </strong>
+
+                <Link to = {`/item/${items.id}`}>
+
+                    <button className="btn btn-primary">Comprar</button>
+
+                </Link>
+
         </div>
 
     )

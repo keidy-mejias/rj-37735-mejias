@@ -4,7 +4,12 @@ export const ItemList = ( {items} ) => {
 
     return (
         
-        <div>
+        <div className="row">
+
+            <h2>Nuestras especialidades</h2>
+
+            <hr/>
+            
             {
 
                 items.map((items) => <Cards key={items.id} items={items} /> )  

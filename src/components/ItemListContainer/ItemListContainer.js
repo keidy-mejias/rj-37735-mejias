@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { Spinner } from 'react-bootstrap'
 import { pedirDatos } from '../Mock/pedirDatos'
 import { ItemList } from '../ItemList/ItemList.js'
+import { useParams } from 'react-router-dom'
 
 
 export const ItemListContainer = ( ) => {
@@ -10,20 +11,30 @@ export const ItemListContainer = ( ) => {
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true)
 
+    const { busquedaId } = useParams()
+    console.log(busquedaId)
+
     useEffect(() => {
         setLoading(true)
 
-        pedirDatos(false)
-            .then((resp) =>{
-                setItems(resp)
-                setLoading(false)
+        pedirDatos()
+
+            .then((resp) => {
+                if (!busquedaId){
+                    setItems(resp)
+                } else {
+                    setItems (resp.filter ( (item) => item.categoria === busquedaId) )
+                }
+
             })
             .catch( (error) => {
                 console.log("Error", error)
+            })
+            .finally( () => {
                 setLoading(false)
             })
 
-    }, [])
+    }, [busquedaId])
  
 
     return (
