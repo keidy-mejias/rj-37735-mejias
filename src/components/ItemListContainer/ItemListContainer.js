@@ -1,4 +1,4 @@
-import './ItemListContainer.scss'
+import './ItemListContainer.css'
 import { useEffect, useState } from 'react'
 import { Spinner } from 'react-bootstrap'
 import { pedirDatos } from '../Mock/pedirDatos'
@@ -11,8 +11,8 @@ export const ItemListContainer = ( ) => {
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true)
 
-    const { busquedaId } = useParams()
-    console.log(busquedaId)
+    const { categoria } = useParams()
+    console.log(categoria)
 
     useEffect(() => {
         setLoading(true)
@@ -20,10 +20,10 @@ export const ItemListContainer = ( ) => {
         pedirDatos()
 
             .then((resp) => {
-                if (!busquedaId){
+                if (!categoria){
                     setItems(resp)
                 } else {
-                    setItems (resp.filter ( (item) => item.categoria === busquedaId) )
+                    setItems (resp.filter ( (item) => item.categoria === categoria) )
                 }
 
             })
@@ -34,12 +34,12 @@ export const ItemListContainer = ( ) => {
                 setLoading(false)
             })
 
-    }, [busquedaId])
+    }, [categoria])
  
 
     return (
 
-        <section className="cards">
+        <section className="row">
 
             <section className='cardsContainer container my-5'>
 

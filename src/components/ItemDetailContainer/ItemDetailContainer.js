@@ -13,7 +13,7 @@ export const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true)
 
     const { itemId } = useParams()
-   
+    console.log(itemId)
 
     useEffect( () => {
 
@@ -33,25 +33,24 @@ export const ItemDetailContainer = () => {
             setLoading(false)
         })
         
-    }, [])
+    }, [itemId])
 
     return(
 
-        <section className="cardsContainer container my-5">
+        <section className="row">
 
+            <section className="cardsContainer container my-5">
             {
                 loading 
                 ?   <Spinner animation="border" role="status" className="spiner">
-                        <span className="visually-hidden"></span>
-                    </Spinner> 
+                <span className="visually-hidden"></span>
+                </Spinner> 
 
-                    : <ItemDetail item={item}/>
+                : <ItemDetail item={item}/>
 
             }
-
+            </section>
         </section>
-
-
     )
 
 } 

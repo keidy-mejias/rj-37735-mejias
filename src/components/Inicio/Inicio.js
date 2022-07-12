@@ -1,4 +1,4 @@
-import './Inicio.scss'
+import './Inicio.css'
 
 export const Inicio = ( {titulo, content}) => {
 

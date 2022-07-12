@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './ItemCount.scss'
+import './ItemCount.css'
 
 
 export const ItemCount = () => {

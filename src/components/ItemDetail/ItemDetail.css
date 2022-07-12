@@ -1,0 +1,32 @@
+.itemDetail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgDetail {
+    height: 450px;
+}
+
+.producto {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    border: lightcoral 1px;
+}
+
+.descripcionProducto {
+    font-size: 20px;
+}
+
+.precioProd {
+    font-size: medium;
+}
+
+.detallePrecio {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

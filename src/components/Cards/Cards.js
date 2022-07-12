@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import './Cards.scss'
+import './Cards.css'
 
 export const Cards = ( {items} ) => {
 
@@ -9,18 +9,22 @@ export const Cards = ( {items} ) => {
 
             <img className="imgCards" alt="img Productos" src={items.img} />
 
-            <p> { items.nombre } </p>
+            <p className="titulo"> { items.nombre } </p>
 
             <hr/>
 
-            <strong> $ { items.precio } </strong>
+            <div className="precio">
 
-                <Link to = {`/item/${items.id}`}>
+                <strong className="precioCard"> $ { items.precio } </strong>
 
-                    <button className="btn btn-primary">Comprar</button>
+                    <Link to = {`/item/${items.id}`}>
 
-                </Link>
+                        <button className="btn btn-secondary">Comprar</button>
 
+                    </Link>
+
+            </div>
+           
         </div>
 
     )

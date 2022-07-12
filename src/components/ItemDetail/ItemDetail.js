@@ -1,4 +1,4 @@
-// Faltan los estilos
+import "./ItemDetail.css"
 
 
 export const ItemDetail = ( {item} ) => {
@@ -9,9 +9,19 @@ export const ItemDetail = ( {item} ) => {
 
             <img className="imgDetail" alt={item.nombre} src={item.img} />
 
-            <h2>{item.nombre}</h2>
+            <div className="producto">
 
-            <strong>$ {item.precio}</strong>
+                <h2>{item.nombre}</h2>
+                <p className="descripcionProducto"> {item.descripcion} </p>
+
+                <div className="precioProd">
+
+                    <strong className="detallePrecio">$ {item.precio}</strong>
+                    <button className="btn btn-secondary">Agregar al carrito</button>
+
+                </div>
+
+            </div>
 
         </div>
 
