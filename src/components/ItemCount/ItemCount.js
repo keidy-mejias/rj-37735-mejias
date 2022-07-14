@@ -1,40 +1,33 @@
-import { useState } from 'react'
 import './ItemCount.css'
 
 
-export const ItemCount = () => {
-
-    const [ contador, setContador] = useState(1)
-
+export const ItemCount = ( {max, setContador, contador, agregarCarrito} ) => {
+    
     const agregar = () => {
-        if (contador > 4){
-            return
-        }
-
-        setContador ( contador + 1); 
+        contador < max && setContador(contador + 1)
     }
 
     const disminuir = () => {
-        if (contador <= 0) {
-            return
-        }
-
-        setContador ( contador - 1 )
+        contador > 1 && setContador(contador - 1)
     }
 
     return (
 
         <section>
 
-            <div className='buttons'>
+            <p className='cantidad'>Cantidad:</p>
 
-                <button className='btn btn-light' onClick={ disminuir }> - </button>
+                <div className='my-3 buttons'>
 
-                <p className='cantProducto'> { contador } </p>
+                    <button className='btn btn-outline-danger btnOpe' onClick={ disminuir }> - </button>
 
-                <button className='btn btn-light' onClick={ agregar }> + </button>
+                    <span className="cantProducto my-2">{contador}</span>
 
-            </div>
+                    <button className='btn btn-outline-success btnOpe' onClick={ agregar }> + </button>
+
+                </div>
+
+                <button className='btn btn-primary' onClick={ agregarCarrito }>Añadir al carrito</button>
 
         </section>
 

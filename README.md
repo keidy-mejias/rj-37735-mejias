@@ -1,3 +1,7 @@
+# Proyecto Ecommerce Pasteleria - Keidy Mejias Coderhouse ReactJS
+
+Se trata de realizar un ecommerce donde se puedan hacer pedidos de los diferentes productos de pasteleria que ofrece la pagina, ya los productos estan presentados y divididos en tres categorias que pueden consultarse en el inicio del ecommerce.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

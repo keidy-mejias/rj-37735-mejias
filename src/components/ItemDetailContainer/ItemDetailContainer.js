@@ -1,6 +1,3 @@
-
-//Falta importar y crear los estilos
-
 import { useEffect, useState } from "react"
 import { Spinner } from "react-bootstrap"
 import { useParams } from "react-router-dom"
@@ -13,7 +10,7 @@ export const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true)
 
     const { itemId } = useParams()
-    console.log(itemId)
+    //console.log(itemId)
 
     useEffect( () => {
 
